@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3"></script>
+
+<div id="app">
+    <button @click="awesome = !awesome">toggle</button>
+    <h1 v-if="awesome">哇!颱風要走了!</h1>
+    <h1 v-else>嗚!颱風要來了!</h1>
+    <div v-for="name in names">{{ name }}</div>
+</div>
+<script>
+    
+  const { createApp } = Vue
+    
+  createApp({
+    data() {
+      return {
+        awesome:true,
+        names:['A','B','C','D','E','F','G']
+      }
+    }
+  }).mount('#app')
+</script>
+</body>
+</html>
